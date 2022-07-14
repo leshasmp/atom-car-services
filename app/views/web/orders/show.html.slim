@@ -1,0 +1,28 @@
+.p-4.mt-4.align-items-center.border.shadow.bg-white.rounded-3
+  .p-3.p-lg-4.pt-lg-0
+    .mb-4
+      h1.mt-5
+        = @order.customer_name
+      hr
+      = link_to t('.new_service'), new_order_service_path(@order), class: 'my-4 btn btn-primary'
+    p
+      strong.me-2
+        = t('.created_at')
+      = @order.created_at.strftime('%b %d, %Y %H:%M')
+    hr
+    - if @order.services.present?
+      table.table.table-striped
+        thead
+          tr
+            th{ scope: :col } #
+            th{ scope: :col } = t('.name')
+            th
+        tbody
+          - @order.services.each_with_index do |service, i|
+            tr
+              th{ scope: :col } = i + 1
+              td = service.name
+              td.d-flex
+                .me-4 = link_to t('show'), service_path(service)
+                .me-4 = link_to t('edit'), edit_service_path(service)
+                = link_to t('destroy'), service_path(service), data: { confirm: 'Are you sure?' }, method: :delete

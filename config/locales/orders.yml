@@ -1,0 +1,24 @@
+en:
+  web:
+    orders:
+      index:
+        title:
+          Orders
+      new:
+        title:
+          New order
+      create:
+        success:
+          Order has been successfully created
+      show:
+        created_at:
+          Created At
+      edit:
+        title:
+          Edit order
+      update:
+        success:
+          Order has been successfully updated
+      destroy:
+        success:
+          Order has been successfully deleted   

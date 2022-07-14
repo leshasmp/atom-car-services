@@ -1,0 +1,15 @@
+.p-4.mt-4.align-items-center.border.shadow.bg-white.rounded-3
+  .p-3.p-lg-4.pt-lg-0
+    .mb-4
+      h1.mt-5
+        = t('.title')
+      hr
+      = simple_form_for @service, url: order_services_path(@order), html: { class: 'my-5' } do |f|
+        = f.error_notification
+        = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+        = f.input :name
+
+        = f.button :submit, class: 'btn btn-success mt-4 btn-block'
+      hr
+      = link_to t('back'), :back, class: 'btn btn-outline-primary'

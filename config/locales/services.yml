@@ -1,0 +1,9 @@
+en:
+  web:
+    services:
+      new:
+        title:
+          New service
+      create:
+        success:
+          Service has been successfully created
